@@ -38,7 +38,7 @@ Bâche / mesh à 100 dpi : 1 m = 3937 px (+ 24 px pour 2 × 3 mm de fond perdu).
 | Panneau rigide (Forex, alvéolaire, alu/Dibond) | CutContour au format | 150 dpi | 150 dpi | 10 mm |
 | Vinyle adhésif (rectangle) | CutContour au format | 150 dpi | 300 dpi | 5 mm |
 | Papier, carton, affiche | CutContour au format | 300 dpi | 300 dpi | 5 mm |
-| Bâche PVC, mesh | aucune (renfort et œillets posés par l'atelier) | 72 dpi (> 3 m) / 100 dpi | 100 dpi | 30 mm |
+| Bâche PVC, mesh | aucune (renfort et œillets posés par l'atelier) | 72 dpi (> 3 m) / 100 dpi | 100 dpi | **60 mm** (bande des ourlets et œillets : aucun texte, logo ou QR code) |
 | Textile, blackback | aucune (finition atelier) | 100 dpi | 150 dpi | 20 mm |
 | Sticker découpé à la forme | CutContour à la forme | 150 dpi | 300 dpi | 2 mm |
 
