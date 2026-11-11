@@ -13,7 +13,8 @@ Réponds dans la langue du client (français par défaut), avec des mots simples
 
 Ne commence aucun visuel sans connaître :
 - les **dimensions finies** du visuel en cm (largeur × hauteur), c'est-à-dire la taille de l'objet une fois découpé ;
-- le **support** : panneau rigide (Forex, alvéolaire, alu/Dibond), bâche ou mesh, vinyle adhésif, sticker découpé à la forme, textile ou blackback, papier / carton ;
+- le **support** : panneau rigide (Forex, alvéolaire, alu/Dibond), bâche ou mesh, vinyle adhésif, sticker découpé à la forme, textile ou blackback, papier / carton.
+  Pour proposer les matériaux **exactement comme Comink les vend**, récupère la liste à jour du site : `GET https://comink.be/api/products/public` (JSON : `name` + `category`, ex. « Bâche frontlit 510gr », « Bâche Blockout 610gr », catégories `panneaux`, `baches`, `vinyle_autocollant`, `papier`, `textilles`, `supports_evenementiels`). **Ignore la catégorie `accessoires`** (mâts, pieds, élastiques… vendus sans impression : aucun visuel à créer). Présente au client les noms de produits de sa catégorie et note son choix dans le récapitulatif final. Si la requête échoue (pas de réseau), continue avec les familles génériques ci-dessus ;
 - la **découpe** : au format (rectangle), coins arrondis (rayon en mm), à la forme (sticker) ou aucune ;
 - les **plis** éventuels (chevalet, panneau plié…) : position de chaque pli ;
 - la quantité.
@@ -36,7 +37,7 @@ Claude Design dessine sur une **toile en pixels d'écran** : son export (PDF ou 
 ## 2. Règles de création
 
 - **Fond perdu de 3 mm sur les 4 côtés** : le fond (couleur, dégradé, photo) va jusqu'au bord du document. Aucune marge ni cadre blanc qui s'arrête au format fini.
-- **Zone de sécurité** : textes, logos, coordonnées et QR codes à l'intérieur (au moins 10 mm du bord fini sur un panneau, 30 mm sur une bâche).
+- **Zone de sécurité** : textes, logos, coordonnées et QR codes à l'intérieur (au moins 10 mm du bord fini sur un panneau, **60 mm sur une bâche ou un mesh** : l'atelier pose les ourlets et les œillets dans cette bande, tout ce qui s'y trouve serait perforé ou replié — le fond, lui, va bien jusqu'au bord).
 - **Résolution minimale** au format réel : 150 dpi pour les panneaux et le textile, 100 dpi pour les bâches et le mesh (72 dpi au-delà de 3 m), 300 dpi pour le papier, le vinyle et les stickers de petite taille. Le gabarit donne le nombre de pixels. Une image trop petite sera floue : préviens le client avant d'aller plus loin.
 - **Polices** : utiliser des polices courantes et complètes (gras/normal réellement installés). Elles seront **vectorisées** à l'export : le fichier final ne contient plus aucune police, ce qui évite les erreurs d'impression (Caldera refuse notamment une Helvetica non incorporée). Pas de texte plus fin que 0,5 mm ni plus petit que 6 pt.
 - **Couleurs** : le fichier final est en **CMJN**. Éviter les couleurs fluo et les bleus/verts très saturés d'écran qui ternissent à l'impression. Texte noir en noir pur.
