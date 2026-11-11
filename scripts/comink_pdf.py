@@ -39,8 +39,10 @@ FOND_PERDU = 3
 PRODUITS = {
     'panneau':   dict(nom='PANNEAU',   bleed=3, decoupe='rectangle', dpi=150, dpi_min=150, securite=10),
     'vinyle':    dict(nom='VINYLE',    bleed=3, decoupe='rectangle', dpi=300, dpi_min=150, securite=5),
-    'bache':     dict(nom='BACHE',     bleed=3, decoupe=None,        dpi=100, dpi_min=72,  securite=30),
-    'mesh':      dict(nom='MESH',      bleed=3, decoupe=None,        dpi=100, dpi_min=72,  securite=30),
+    # Bâche / mesh : 60 mm de zone de sécurité — l'atelier pose ourlets et
+    # œillets dans cette bande, tout texte ou logo y serait perforé/replié.
+    'bache':     dict(nom='BACHE',     bleed=3, decoupe=None,        dpi=100, dpi_min=72,  securite=60),
+    'mesh':      dict(nom='MESH',      bleed=3, decoupe=None,        dpi=100, dpi_min=72,  securite=60),
     'textile':   dict(nom='TEXTILE',   bleed=3, decoupe=None,        dpi=150, dpi_min=100, securite=20),
     'blackback': dict(nom='BLACKBACK', bleed=3, decoupe=None,        dpi=150, dpi_min=100, securite=20),
     'papier':    dict(nom='PAPIER',    bleed=3, decoupe='rectangle', dpi=300, dpi_min=300, securite=5),
