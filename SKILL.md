@@ -61,6 +61,16 @@ Claude Design dessine sur une **toile en pixels d'écran** : son export (PDF ou 
    ```
    python3 scripts/sticker_contour.py logo.png --hauteur 7 --quantite 50 --nom logo [--marge-blanche 2]
    ```
+4. **Logo pixelisé ? Vectorise-le.** Quand le client fournit un logo bitmap trop petit
+   (PNG/JPG basse résolution) et qu'il s'agit d'un logo à APLATS (2-8 couleurs franches,
+   typo, picto — pas une photo ni un dégradé) :
+   ```
+   python3 scripts/vectoriser_logo.py logo.png [--couleurs 4] --apercu
+   ```
+   Le SVG produit est net à toutes les tailles ; montre l'aperçu avant/après au client
+   pour validation, puis utilise le SVG comme source (`preparer_fichier.py logo_vecto.svg …`).
+   Pour une photo ou un dégradé complexe : ne vectorise pas, demande la source haute
+   résolution ou le fichier original (PDF/AI/SVG).
 
 ## 4. Vérifier avant de livrer (obligatoire)
 
